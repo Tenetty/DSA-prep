@@ -1,5 +1,3 @@
----
-
 ````markdown
 # Merge Two Sorted Linked Lists — Analysis
 
