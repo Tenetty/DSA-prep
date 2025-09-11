@@ -1,4 +1,3 @@
-````markdown
 # Merge Two Sorted Linked Lists — Analysis
 
 ## 1. Algorithm (in simple English)
@@ -70,62 +69,46 @@ public:
         return head;
     }
 };
-````
+```
 
 ---
 
 ## 3. Time Complexity
-
-**O(n + m)**
-
-* Each node from `list1` and `list2` is visited and linked exactly once.
-* No nested loops; just linear traversal.
+**O(n + m)**  
+- Each node from `list1` and `list2` is visited and linked exactly once.  
 
 ---
 
 ## 4. Space Complexity
-
-**O(1)** extra space.
-
-* Only a few pointers (`head`, `iter`) are used.
-* The function reuses existing nodes instead of creating new ones.
+**O(1)** extra space.  
+- Only a few pointers (`head`, `iter`) are used.  
+- The function reuses existing nodes instead of creating new ones.  
 
 ---
 
 ## 5. Assumptions / Constraints
-
-* Both input lists are sorted in **non-decreasing order**.
-* Lists are singly linked (`ListNode*`).
-* Inputs may be `nullptr` (empty list).
-* The merge is done **in-place**: original node ordering is modified.
+- Both input lists are sorted in **non-decreasing order**.  
+- Lists are singly linked (`ListNode*`).  
+- Inputs may be `nullptr` (empty list).  
+- The merge is done **in-place**: original node ordering is modified.  
 
 ---
 
 ## 6. Optimizations (if any)
-
-* The condition `if(list1==nullptr && list2==nullptr)` is redundant because the earlier `if`/`else if` already cover it.
-* Can be simplified using a **dummy node** approach, which avoids special handling for the head node and makes the code shorter.
-* Recursive solution possible but uses O(n+m) stack space, while this iterative version is more memory-efficient.
+- The condition `if(list1==nullptr && list2==nullptr)` is redundant because the earlier `if`/`else if` already cover it.  
+- Can be simplified using a **dummy node** approach, which avoids special handling for the head node and makes the code shorter.  
+- Recursive solution possible but uses O(n+m) stack space, while this iterative version is more memory-efficient.  
 
 ---
 
 ## 7. Edge Cases
-
 Handled:
-
-* `list1` is empty → returns `list2`.
-* `list2` is empty → returns `list1`.
-* Both lists empty → returns `nullptr`.
-* Duplicate values → keeps all, order stable (nodes from `list1` picked first when equal).
+- `list1` is empty → returns `list2`.  
+- `list2` is empty → returns `list1`.  
+- Both lists empty → returns `nullptr`.  
+- Duplicate values → keeps all, order stable (nodes from `list1` picked first when equal).  
 
 Potential issues if assumptions break:
-
-* If input lists are **not sorted**, the result won’t be sorted.
-* If the two lists share nodes (not independent), re-linking may corrupt the structure.
-* Very large lists are fine here (iterative avoids recursion depth issues).
-
-```
-
----
-
-```
+- If input lists are **not sorted**, the result won’t be sorted.  
+- If the two lists share nodes (not independent), re-linking may corrupt the structure.  
+- Very large lists are fine here (iterative avoids recursion depth issues).  
