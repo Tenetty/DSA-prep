@@ -1,25 +1,23 @@
 ---
 
+````markdown
 # Merge Two Sorted Linked Lists — Analysis
 
 ## 1. Algorithm (in simple English)
-
-1. If either list is empty, return the other list immediately.
-2. Compare the first nodes of both lists. Whichever has the smaller (or equal) value becomes the **head** of the merged list.
-3. Keep an iterator pointer (`iter`) that builds the merged list step by step.
+1. If either list is empty, return the other list immediately.  
+2. Compare the first nodes of both lists. Whichever has the smaller (or equal) value becomes the **head** of the merged list.  
+3. Keep an iterator pointer (`iter`) that builds the merged list step by step.  
 4. While both lists still have nodes:
-
-   * Compare current nodes.
-   * Attach the smaller one to `iter->next`.
-   * Advance the pointer (`list1` or `list2`) from which the node was taken.
-   * Move `iter` forward.
-5. When one list becomes empty, attach the remainder of the other list to `iter->next`.
+   - Compare current nodes.  
+   - Attach the smaller one to `iter->next`.  
+   - Advance the pointer (`list1` or `list2`) from which the node was taken.  
+   - Move `iter` forward.  
+5. When one list becomes empty, attach the remainder of the other list to `iter->next`.  
 6. Return the merged list starting at `head`.
 
 ---
 
 ## 2. Code
-
 ```cpp
 /**
  * Definition for singly-linked list.
@@ -74,7 +72,7 @@ public:
         return head;
     }
 };
-```
+````
 
 ---
 
@@ -128,4 +126,8 @@ Potential issues if assumptions break:
 * If the two lists share nodes (not independent), re-linking may corrupt the structure.
 * Very large lists are fine here (iterative avoids recursion depth issues).
 
+```
+
 ---
+
+```
